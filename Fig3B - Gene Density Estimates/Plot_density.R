@@ -38,17 +38,10 @@ GH5_set <- read.csv("GH5_set_distances.tsv", sep = '\t', stringsAsFactors = F)
 GH5_set %<>% clean_set %>% name_col(name = 'GH5') %>% 
     cbind(., as.numeric(apply(.,1, FUN = function(r){return(min(as.numeric(r['Prime3']),as.numeric(r['Prime5'])))})))
 
-PL3_set <- read.csv("pl3_set_distances.tsv", sep = '\t', stringsAsFactors = F)
-PL3_set %<>% clean_set %>% name_col(name = 'PL3') %>% 
-    cbind(., as.numeric(apply(.,1, FUN = function(r){return(min(as.numeric(r['Prime3']),as.numeric(r['Prime5'])))})))
 
 sprysec_set <- read.csv("sprysec_set_distances.tsv", sep = '\t', stringsAsFactors = F)    
 sprysec_set %<>% clean_set  %>% 
 cbind(., as.numeric(apply(.,1, FUN = function(r){return(min(as.numeric(r['Prime3']),as.numeric(r['Prime5'])))})))
-
-spry_set <- read.csv("Non_secreted_spry_set_distances.tsv", sep = '\t', stringsAsFactors = F)    
-spry_set %<>% clean_set %>% 
-    cbind(., as.numeric(apply(.,1, FUN = function(r){return(min(as.numeric(r['Prime3']),as.numeric(r['Prime5'])))})))
 
 HYP_set <- read.csv("HYP_set_distances.tsv", sep = '\t', stringsAsFactors = F)    
 HYP_set %<>% clean_set %>% 
