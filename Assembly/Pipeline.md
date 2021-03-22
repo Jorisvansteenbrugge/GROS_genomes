@@ -6,7 +6,7 @@ Since we sequenced a pool of genomes we perform a read correction step to reduce
 $ canu -correct -p gr19 -d gr19_corrected_reads genomeSize=100m corOutCoverage=200 correctedErrorRate=0.15 -pacbio-raw SRR13560397.fasta SRR13560396.fasta SRR13560395.fasta
 $ canu -correct -p gr22 -d gr22_corrected_reads genomeSize=100m corOutCoverage=200 correctedErrorRate=0.15 -pacbio-raw SRR13560394.fasta SRR13560393.fasta SRR13560392.fasta
 ```
-The corrected reads produced by canu are stored as gr19.correctedReads.fasta.gz and gr22.correctedReads.fasta.gz
+The corrected reads produced by canu are stored as **gr19.correctedReads.fasta.gz** and **gr22.correctedReads.fasta.gz**
 
 
 
@@ -19,4 +19,27 @@ $ python Assembly/optimize_wtdbg2.py --reads gr19.correctedReads.fasta.gz --wd g
 $ python Assembly/optimize_wtdbg2.py --reads gr22.correctedReads.fasta.gz --wd gr22_initial_assemblies -t 8
 ```
 
-The quality of the initial assemblies was assessed based on whether the assembly size was close to the genome size estimate (Eves-van den Akker et al., 2016), and the completeness ([BUSCO](https://github.com/Jorisvansteenbrugge/GROS_genomes/blob/main/BUSCO.md)). For Gr-Line19 Assembly_L6000_p20e5 was selected to continue, for Gr-Line22 Assembly_L5000p15e6 was selected to continue.
+The quality of the initial assemblies was assessed based on whether the assembly size was close to the genome size estimate (Eves-van den Akker et al., 2016), and the completeness ([BUSCO](https://github.com/Jorisvansteenbrugge/GROS_genomes/blob/main/BUSCO.md)). For Gr-Line19 **Assembly_L6000_p20e5** was selected to continue, for Gr-Line22 **Assembly_L5000p15e6** was selected to continue.
+
+# Purging of Haplotigs
+
+**Gr-Line19:**
+```
+$ cat SRR13560397.fasta SRR13560396.fasta SRR13560395.fasta > Gr19_PB_All.fasta
+$ minimap2 -t 4 -ax map-pb Assembly_L6000_p20e5.fasta Gr19_PB_All.fasta --secondary=no | samtools sort -m 30G -@ 2 -o Gr19_Assembly_L6000_p20e5_minimapped_AllPB.bam
+$ purge_haplotigs hist -b Gr19_Assembly_L6000_p20e5_minimapped_AllPB.bam -g Assembly_L6000_p20e5.fasta -t 8
+$ purge_haplotigs cov -i Gr19_Assembly_L6000_p20e5_minimapped_AllPB.bam.genecov -l 4 -m 15 -h 110
+$ purge_haplotigs purge -g Assembly_L6000_p20e5.fasta -c coverage_stats.csv
+$ mv curated.fasta G_rostochiensis19_PH.fasta
+```
+
+**Gr-Line22:**
+```
+$ cat SRR13560394.fasta SRR13560393.fasta SRR13560392.fasta > Gr22_PB_All.fasta
+$ minimap2 -t 4 -ax map-pb Assembly_L5000p15e6.fasta Gr22_PB_All.fasta --secondary=no | samtools sort -m 30G -@ 2 -o Gr22_Assembly_L5000p15e6_minimapped_AllPB.bam
+$ purge_haplotigs hist -b Gr22_Assembly_L5000p15e6_minimapped_AllPB.bam -g Assembly_L5000p15e6.fasta -t 8
+$ purge_haplotigs cov -i Gr22_Assembly_L5000p15e6_minimapped_AllPB.bam.genecov -l 4 -m 25 -h 140
+$ purge_haplotigs purge -g Assembly_L5000p15e6.fasta -c coverage_stats.csv
+$ mv curated.fasta G_rostochiensis22_PH.fasta
+```
+
