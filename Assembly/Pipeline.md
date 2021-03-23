@@ -1,6 +1,19 @@
+### Programs written by others:
+
+- canu (https://github.com/marbl/canu)
+- wtdbg2 (https://github.com/ruanjue/wtdbg2)
+- BUSCO (https://busco.ezlab.org/)
+- minimap2 (https://github.com/lh3/minimap2)
+- purge_haplotigs (https://bitbucket.org/mroachawri/purge_haplotigs/)
+- finisherSC (https://github.com/kakitone/finishingTool)
+- SSPACE-Longread (https://bmcbioinformatics-biomedcentral-com.ezproxy.library.wur.nl/articles/10.1186/1471-2105-15-211)
+- Arrow/GenomicConsensus (https://github.com/PacificBiosciences/GenomicConsensus)
+- Pilon (https://github.com/broadinstitute/pilon)
+- BioPython (https://biopython.org/)
+
 # Trimming of reads
 
-Since we sequenced a pool of genomes we perform a read correction step to reduce the number of haplotypes in the reads. Canu (https://github.com/marbl/canu) is used for the error correction of the reads. Specifically, parameters these parameters were tweaked: `corOutCoverage=200 correctedErrorRate=0.15`.
+Since we sequenced a pool of genomes we perform a read correction step to reduce the number of haplotypes in the reads. Canu is used for the error correction of the reads. Specifically, parameters these parameters were tweaked: `corOutCoverage=200 correctedErrorRate=0.15`.
 
 ```
 $ canu -correct -p gr19 -d gr19_corrected_reads genomeSize=100m corOutCoverage=200 correctedErrorRate=0.15 \
@@ -14,7 +27,7 @@ The corrected reads produced by canu are stored as **gr19.correctedReads.fasta.g
 
 # Assembly with wtdgb2
 
-For each genome approximately 100 initial assemblies were produced optimizing the parameters minimal read length, k-mer size, and minimal read depth. This optimization step is performed with a custom script [optimize_wtdbg2.py](https://github.com/Jorisvansteenbrugge/GROS_genomes/blob/main/Assembly/optimize_wtdbg2.py)
+For each genome approximately 100 initial assemblies were produced with wtdbg2, optimizing the parameters minimal read length, k-mer size, and minimal read depth. This optimization step is performed with a custom script [optimize_wtdbg2.py](https://github.com/Jorisvansteenbrugge/GROS_genomes/blob/main/Assembly/optimize_wtdbg2.py)
 
 ```
 $ python Assembly/optimize_wtdbg2.py --reads gr19.correctedReads.fasta.gz --wd gr19_initial_assemblies -t 8
