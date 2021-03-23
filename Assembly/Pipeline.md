@@ -7,7 +7,7 @@
 - purge_haplotigs (https://bitbucket.org/mroachawri/purge_haplotigs/)
 - finisherSC (https://github.com/kakitone/finishingTool)
 - Hydraslayer/GapFiller (https://github.com/Jorisvansteenbrugge/GapFiller)
-- SSPACE-Longread (https://bmcbioinformatics-biomedcentral-com.ezproxy.library.wur.nl/articles/10.1186/1471-2105-15-211)
+- SSPACE-Longread (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-211)
 - Arrow/GenomicConsensus (https://github.com/PacificBiosciences/GenomicConsensus)
 - Pilon (https://github.com/broadinstitute/pilon)
 - BioPython (https://biopython.org/)
