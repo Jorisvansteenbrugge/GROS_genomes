@@ -19,3 +19,9 @@ The sequence reads used in this project are available at the NCBI SRA database u
 | SRR13560393 | 508886   | PACBIO_SMRT | Gr-Line22 |
 | SRR13560392 | 560230   | PACBIO_SMRT | Gr-Line22 |
 
+
+# Assembly pipeline
+The detailed pipeline description with the exact commands used is explained in [Assembly/Pipeline.md](Assembly/Pipeline.md). Various custom scripts used in the pipeline are available in the folder [Assembly/](Assembly/)
+
+# Gene predictions
+Gene predictions were done as described in [BRAKER_grene_predictions.md](BRAKER_grene_predictions.md)
