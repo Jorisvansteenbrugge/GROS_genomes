@@ -1,4 +1,4 @@
-### Programs written by others:
+### Programs not in this repository
 
 - canu (https://github.com/marbl/canu)
 - wtdbg2 (https://github.com/ruanjue/wtdbg2)
@@ -6,6 +6,7 @@
 - minimap2 (https://github.com/lh3/minimap2)
 - purge_haplotigs (https://bitbucket.org/mroachawri/purge_haplotigs/)
 - finisherSC (https://github.com/kakitone/finishingTool)
+- Hydraslayer/GapFiller (https://github.com/Jorisvansteenbrugge/GapFiller)
 - SSPACE-Longread (https://bmcbioinformatics-biomedcentral-com.ezproxy.library.wur.nl/articles/10.1186/1471-2105-15-211)
 - Arrow/GenomicConsensus (https://github.com/PacificBiosciences/GenomicConsensus)
 - Pilon (https://github.com/broadinstitute/pilon)
