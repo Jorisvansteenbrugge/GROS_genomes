@@ -101,3 +101,52 @@ $ samtools index gapfilling_gr22/correctedreads_onScaffolds.bam
 $ Hydraslayer -o gapfilling_gr22/Gr22_scaffolds_gapfilled.fasta -c 10 -a 60 scaffolding_gr22/scaffolds.fasta \
     gapfilling_gr22/correctedreads_onScaffolds.bam
 ```
+
+# Polishing with Arrow
+
+For **Gr-Line19**, the following is repeated three times. The first run uses the output of the gapfilling step `gapfilling_gr19/Gr19_scaffolds_gapfilled.fasta`. The second and third run use the output fasta file of the first and second run, respectively.
+```
+$ mkdir gr19_Arrow
+$ blasr Gr19_PB_All.fasta gapfilling_gr19/Gr19_scaffolds_gapfilled.fasta --out gr19_Arrow/R1.bam --bam --bestn 10 \
+        --minMatch 12 --maxMatch 30 --nproc 8 --minSubreadLength 50 --minAlnLength 50 --minPctSimilarity 70 \
+        --minPctAccuracy 70 --hitPolicy randombest --randomSeed 1
+$ samtools sort gr19_Arrow/R1.bam -@ 2 -m 30G -o gr19_Arrow/R1_sort.bam
+$ pbindex gr19_Arrow/R1_sort.bam
+$ arrow gr19_Arrow/R1_sort.bam -j 8 --referenceFilename gapfilling_gr19/Gr19_scaffolds_gapfilled.fasta -o gr19_Arrow/Gr19_scaffolds_gapfilled_arrow1.fasta -o gr19_Arrow/Gr19_scaffolds_gapfilled_arrow1.gff -o gr19_Arrow/Gr19_scaffolds_gapfilled_arrow1.fastq
+```
+
+For **Gr-Line22**, the following is repeated three times. The first run uses the output of the gapfilling step `gapfilling_gr22/Gr22_scaffolds_gapfilled.fasta`. The second and third run use the output fasta file of the first and second run, respectively.
+```
+$ mkdir gr22_Arrow
+$ blasr Gr22_PB_All.fasta gapfilling_gr22/Gr22_scaffolds_gapfilled.fasta --out gr22_Arrow/R1.bam --bam --bestn 10 \
+        --minMatch 12 --maxMatch 30 --nproc 8 --minSubreadLength 50 --minAlnLength 50 --minPctSimilarity 70 \
+        --minPctAccuracy 70 --hitPolicy randombest --randomSeed 1
+$ samtools sort gr22_Arrow/R1.bam -@ 2 -m 30G -o gr22_Arrow/R1_sort.bam
+$ pbindex gr22_Arrow/R1_sort.bam
+$ arrow gr22_Arrow/R1_sort.bam -j 8 --referenceFilename gapfilling_gr22/Gr22_scaffolds_gapfilled.fasta -o gr22_Arrow/Gr22_scaffolds_gapfilled_arrow2.fasta -o gr22_Arrow/Gr22_scaffolds_gapfilled_arrow2.gff -o gr22_Arrow/Gr22_scaffolds_gapfilled_arrow2.fastq
+```
+
+
+## Polishing with Pilon
+
+**Gr-Line19**
+```
+$ mkdir gr19_pilon
+$ pilonAuto -g gr19_Arrow/Gr19_scaffolds_gapfilled_arrow3.fasta -m 100 -t 8 -1 SRR13560388_1.fastq SRR13560388_1.fastq \
+        -2 SRR13560389_2.fastq SRR13560389_2.fastq -it 5 --pilon pilon-1.23.jar -o gr19_pilon/
+```
+
+**Gr-Line22**
+```
+$ mkdir gr22_pilon
+$ pilonAuto -g gr22_Arrow/Gr22_scaffolds_gapfilled_arrow3.fasta -m 100 -t 8 -1 SRR13560388_1.fastq SRR13560388_1.fastq \
+        -2 SRR13560389_2.fastq SRR13560389_2.fastq -it 5 --pilon pilon-1.23.jar -o gr22_pilon/
+```
+
+## Cleanup
+After multiple rounds of polishing with arrow and pilon, the scaffold names tend to get messy; e.g. > Scaffold1|Arrow|Arrow|Arrow|Pilon|Pilon|Pilon|Pilon|Pilon so a custom script was used to generate simple and clean Scaffold names.
+
+```
+$ python swap_fasta_header.py Gr19_v10_Scaffold gr19_pilon/round4/pilon_run4.fasta > G_rostochiensis_v10_L19_named.fasta
+$ python swap_fasta_header.py Gr22_v10_Scaffold gr22_pilon/round4/pilon_run4.fasta > G_rostochiensis_v10_L22_named.fasta
+```
