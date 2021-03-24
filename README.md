@@ -25,3 +25,13 @@ The detailed pipeline description with the exact commands used is explained in [
 
 # Gene predictions
 Gene predictions were done as described in [BRAKER_grene_predictions.md](BRAKER_grene_predictions.md)
+
+# Repeat Masking
+Masking of repeats is done through RepeatModeler/Repeatmasker using a custom pipeline that is available here: https://github.com/Jorisvansteenbrugge/RepeatMaskPipeline.
+The pipeline was run with the following commands:
+```
+$ mkdir gr19_repeatmask
+$ mkdir gr22_repeatmask
+$ Repeatmask_pipeline run all --workdir gr19_repeatmask/ -i G_rostochiensis_v10_L19_named.fasta -p 8 
+$ Repeatmask_pipeline run all --workdir gr22_repeatmask/ -i G_rostochiensis_v10_L22_named.fasta -p 8 
+```
