@@ -1,0 +1,305 @@
+                            _      _ _            _      _   _  _____ 
+                            | |    | | |          | |    | \ | |/ ____|
+         _ __ ___   ___   __| | ___| | |_ ___  ___| |_   |  \| | |  __ 
+        | '_ ` _ \ / _ \ / _` |/ _ \ | __/ _ \/ __| __|  | . ` | | |_ |
+        | | | | | | (_) | (_| |  __/ | ||  __/\__ \ |_   | |\  | |__| |
+        |_| |_| |_|\___/ \__,_|\___|_|\__\___||___/\__|  |_| \_|\_____|
+--------------------------------------------------------------------------------
+ModelTest-NG v0.2.0 released on 05.04.2021 by The Exelixis Lab.
+Written by Diego Darriba.
+Contributors: Tomas Flouri, Alexey Kozlov, Benoit Morel, David Posada, 
+              Alexandros Stamatakis.
+Latest version: https://github.com/ddarriba/modeltest
+--------------------------------------------------------------------------------
+
+Physical cores: 6
+Logical cores:  12
+Memory:         126GB
+Extensions:     AVX2 AVX SSE3 
+
+Validating binary checkpoint
+OK!
+--------------------------------------------------------------------------------
+ModelTest-NG v0.2.0
+
+Input data:
+  MSA:        sprysec2/SPRYSEC_codingseqs.nexus.reduced
+  Tree:       Maximum parsimony
+    file:           -
+  #taxa:            148
+  #sites:           2903
+  #patterns:        2625
+  Max. thread mem:  191 MB
+
+Output:
+  Log:           sprysec2/SPRYSEC_codingseqs.nexus.reduced.log
+  Starting tree: sprysec2/SPRYSEC_codingseqs.nexus.reduced.tree
+  Results:       sprysec2/SPRYSEC_codingseqs.nexus.reduced.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          6/6
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+modeltest-ng was called as follows: 
+>> /home/joris/tools/modeltest/bin/modeltest-ng -i sprysec2/SPRYSEC_codingseqs.nexus.reduced -p 6 
+
+
+Partition 1/1
+
+    4/88   TIM3+I+G4      0h:00:06   0h:00:06          -86409.4048  2.0589  0.0216
+    3/88   TVM+I+G4       0h:00:07   0h:00:07          -86374.4899  2.0792  0.0216
+    6/88   TIM1+I+G4      0h:00:07   0h:00:07          -86421.0896  2.0241  0.0216
+    7/88   TPM3uf+I+G4    0h:00:09   0h:00:09          -86411.4135  2.0572  0.0216
+    2/88   GTR+I+G4       0h:00:09   0h:00:09          -86372.8898  2.0831  0.0216
+    5/88   TIM2+I+G4      0h:00:09   0h:00:09          -86385.7373  1.9473  0.0218
+    9/88   TPM1uf+I+G4    0h:00:05   0h:00:12          -86423.6723  1.9404  0.0216
+    8/88   TrN+I+G4       0h:00:06   0h:00:12          -86421.8835  1.9338  0.0216
+   13/88   HKY+I+G4       0h:00:04   0h:00:13          -86423.2065  2.0180  0.0216
+   10/88   TPM2uf+I+G4    0h:00:07   0h:00:14          -86386.7438  1.9501  0.0216
+   12/88   TVMef+I+G4     0h:00:06   0h:00:15          -86576.3421  2.1406  0.0216
+   11/88   SYM+I+G4       0h:00:06   0h:00:15          -86483.8300  2.1263  0.0216
+   17/88   F81+I+G4       0h:00:03   0h:00:17          -86648.0966  2.0631  0.0216
+   14/88   TIM2ef+I+G4    0h:00:05   0h:00:17          -86491.7863  2.1191  0.0218
+   15/88   TIM1ef+I+G4    0h:00:05   0h:00:17          -86583.0259  2.1109  0.0216
+   16/88   TIM3ef+I+G4    0h:00:04   0h:00:17          -86575.5563  2.1373  0.0216
+   23/88   JC+I+G4        0h:00:02   0h:00:19          -86928.5287  2.1758  0.0216
+   18/88   TPM3+I+G4      0h:00:05   0h:00:20          -86664.8311  2.1528  0.0216
+   19/88   TPM2+I+G4      0h:00:06   0h:00:21          -86584.2861  2.1276  0.0216
+   22/88   K80+I+G4       0h:00:04   0h:00:21          -86673.3695  2.0387  0.0216
+   21/88   TrNef+I+G4     0h:00:04   0h:00:21          -86583.0663  2.1221  0.0216
+   20/88   TPM1+I+G4      0h:00:05   0h:00:22          -86672.8022  2.1330  0.0216
+   25/88   TVM+G4         0h:00:06   0h:00:26          -86396.2884  1.9319       -
+   26/88   TIM3+G4        0h:00:06   0h:00:27          -86431.2090  1.9119       -
+   24/88   GTR+G4         0h:00:08   0h:00:27          -86394.0502  1.9324       -
+   28/88   TIM1+G4        0h:00:07   0h:00:28          -86443.1511  1.8777       -
+   29/88   TPM3uf+G4      0h:00:07   0h:00:29          -86433.9363  1.9084       -
+   27/88   TIM2+G4        0h:00:09   0h:00:30          -86405.8871  1.9037       -
+   31/88   TPM1uf+G4      0h:00:04   0h:00:31          -86446.3454  1.8074       -
+   30/88   TrN+G4         0h:00:06   0h:00:32          -86444.0138  1.7957       -
+   33/88   SYM+G4         0h:00:05   0h:00:33          -86500.2524  1.9798       -
+   35/88   HKY+G4         0h:00:04   0h:00:34          -86445.9343  1.8751       -
+   32/88   TPM2uf+G4      0h:00:07   0h:00:34          -86408.1301  1.8806       -
+   34/88   TVMef+G4       0h:00:05   0h:00:34          -86596.7505  1.9911       -
+   39/88   F81+G4         0h:00:02   0h:00:36          -86671.5725  1.9125       -
+   36/88   TIM2ef+G4      0h:00:04   0h:00:36          -86507.9083  1.9708       -
+   37/88   TIM1ef+G4      0h:00:04   0h:00:36          -86601.1817  1.9632       -
+   38/88   TIM3ef+G4      0h:00:04   0h:00:37          -86593.5283  1.9823       -
+   40/88   TPM3+G4        0h:00:04   0h:00:38          -86686.7226  1.9979       -
+   41/88   TPM2+G4        0h:00:04   0h:00:38          -86604.7784  1.9760       -
+   44/88   K80+G4         0h:00:03   0h:00:39          -86694.8543  1.9649       -
+   45/88   JC+G4          0h:00:02   0h:00:39          -86950.5610  2.0191       -
+   42/88   TPM1+G4        0h:00:03   0h:00:39          -86695.2649  1.9014       -
+   43/88   TrNef+G4       0h:00:04   0h:00:40          -86601.2180  1.9688       -
+   48/88   TIM3+I         0h:00:02   0h:00:41          -88118.5613       -  0.0216
+   49/88   TIM2+I         0h:00:03   0h:00:42          -88127.4976       -  0.0216
+   50/88   TIM1+I         0h:00:03   0h:00:42          -88166.6591       -  0.0216
+   51/88   TPM3uf+I       0h:00:02   0h:00:42          -88138.0341       -  0.0216
+   47/88   TVM+I          0h:00:04   0h:00:42          -88098.7846       -  0.0216
+   52/88   TrN+I          0h:00:02   0h:00:43          -88166.8870       -  0.0216
+   46/88   GTR+I          0h:00:05   0h:00:43          -88079.3055       -  0.0216
+   53/88   TPM1uf+I       0h:00:02   0h:00:44          -88186.3982       -  0.0216
+   54/88   TPM2uf+I       0h:00:02   0h:00:44          -88147.2799       -  0.0216
+   57/88   HKY+I          0h:00:01   0h:00:44          -88186.6619       -  0.0216
+   58/88   TIM2ef+I       0h:00:02   0h:00:45          -88205.5692       -  0.0216
+   55/88   SYM+I          0h:00:03   0h:00:45          -88180.5554       -  0.0216
+   59/88   TIM1ef+I       0h:00:01   0h:00:45          -88282.0316       -  0.0216
+   60/88   TIM3ef+I       0h:00:01   0h:00:45          -88257.0654       -  0.0216
+   61/88   F81+I          0h:00:00   0h:00:45          -88399.8607       -  0.0216
+   56/88   TVMef+I        0h:00:03   0h:00:45          -88277.3564       -  0.0216
+   67/88   JC+I           0h:00:00   0h:00:45          -88612.3513       -  0.0216
+   62/88   TPM3+I         0h:00:01   0h:00:46          -88352.3828       -  0.0216
+   66/88   K80+I          0h:00:01   0h:00:46          -88378.8694       -  0.0216
+   63/88   TPM2+I         0h:00:01   0h:00:46          -88303.8527       -  0.0216
+   64/88   TPM1+I         0h:00:02   0h:00:47          -88378.8385       -  0.0216
+   65/88   TrNef+I        0h:00:02   0h:00:47          -88282.0537       -  0.0216
+   70/88   TIM3           0h:00:02   0h:00:48          -88261.2347       -       -
+   71/88   TIM2           0h:00:03   0h:00:49          -88274.6112       -       -
+   69/88   TVM            0h:00:03   0h:00:49          -88243.8770       -       -
+   72/88   TIM1           0h:00:03   0h:00:50          -88315.4192       -       -
+   73/88   TPM3uf         0h:00:03   0h:00:50          -88284.8044       -       -
+   74/88   TrN            0h:00:02   0h:00:50          -88315.6895       -       -
+   75/88   TPM1uf         0h:00:02   0h:00:51          -88339.4059       -       -
+   68/88   GTR            0h:00:06   0h:00:51          -88220.3248       -       -
+   79/88   HKY            0h:00:01   0h:00:51          -88339.6928       -       -
+   76/88   TPM2uf         0h:00:03   0h:00:52          -88298.6223       -       -
+   78/88   TVMef          0h:00:02   0h:00:52          -88421.7173       -       -
+   82/88   TIM3ef         0h:00:01   0h:00:52          -88396.8945       -       -
+   80/88   TIM2ef         0h:00:01   0h:00:52          -88345.8599       -       -
+   81/88   TIM1ef         0h:00:01   0h:00:52          -88424.4928       -       -
+   77/88   SYM            0h:00:02   0h:00:52          -88318.2249       -       -
+   83/88   F81            0h:00:00   0h:00:52          -88553.7474       -       -
+   89/88   JC             0h:00:00   0h:00:52          -88760.7679       -       -
+   88/88   K80            0h:00:01   0h:00:53          -88528.0945       -       -
+   84/88   TPM3           0h:00:01   0h:00:53          -88498.7516       -       -
+   86/88   TPM1           0h:00:01   0h:00:53          -88528.0655       -       -
+   85/88   TPM2           0h:00:01   0h:00:53          -88451.0629       -       -
+   87/88   TrNef          0h:00:01   0h:00:53          -88424.5149       -       -
+ ----ID---  ----MODEL---- ---Time--- -Elapsed--- -------LnL------- -Alpha- -P-inv-
+
+Computation of likelihood scores completed. It took 0h:00:53
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TVM+I+G4           9    -86374.4899    175156.9769         0.0000    0.9038
+       2  GTR+I+G4          10    -86372.8898    175161.7501         4.7732    0.0831
+       3  TPM2uf+I+G4        7    -86386.7438    175165.5376         8.5608    0.0125
+       4  TIM2+I+G4          8    -86385.7373    175171.4981        14.5212    0.0006
+       5  TVM+G4             8    -86396.2884    175192.6003        35.6235    0.0000
+       6  GTR+G4             9    -86394.0502    175196.0974        39.1205    0.0000
+       7  TPM2uf+G4          6    -86408.1301    175200.3367        43.3599    0.0000
+       8  TIM2+G4            7    -86405.8871    175203.8241        46.8472    0.0000
+       9  TPM3uf+I+G4        7    -86411.4135    175214.8770        57.9002    0.0000
+      10  TIM3+I+G4          8    -86409.4048    175218.8331        61.8563    0.0000
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              TVM+I+G4
+lnL:                -86374.4899
+Frequencies:        0.2960 0.2136 0.2633 0.2271
+Subst. Rates:       1.5561 1.9048 1.3332 1.1848 1.9048 1.0000 
+Inv. sites prop:    0.0216
+Gamma shape:        2.0792
+Score:              175156.9769
+Weight:             0.9038
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              1.9310
+Alpha-P.Inv:        2.0778
+P.Inv-Alpha:        0.0216
+Frequencies:        0.2958 0.2139 0.2630 0.2273 
+
+Commands:
+  > phyml  -i sprysec2/SPRYSEC_codingseqs.nexus.reduced -m 012314 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s sprysec2/SPRYSEC_codingseqs.nexus.reduced -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa sprysec2/SPRYSEC_codingseqs.nexus.reduced --model TVM+I+G4
+  > paup -s sprysec2/SPRYSEC_codingseqs.nexus.reduced
+  > iqtree -s sprysec2/SPRYSEC_codingseqs.nexus.reduced -m TVM+I+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+I+G4          10    -86372.8898    173351.7796         0.0000    0.6457
+       2  TVM+I+G4           9    -86374.4899    173352.9799         1.2003    0.3543
+       3  TIM2+I+G4          8    -86385.7373    173373.4746        21.6949    0.0000
+       4  TPM2uf+I+G4        7    -86386.7438    173373.4877        21.7080    0.0000
+       5  GTR+G4             9    -86394.0502    173392.1004        40.3208    0.0000
+       6  TVM+G4             8    -86396.2884    173394.5768        42.7972    0.0000
+       7  TIM2+G4            7    -86405.8871    173411.7741        59.9945    0.0000
+       8  TPM2uf+G4          6    -86408.1301    173414.2603        62.4806    0.0000
+       9  TIM3+I+G4          8    -86409.4048    173420.8097        69.0300    0.0000
+      10  TPM3uf+I+G4        7    -86411.4135    173422.8271        71.0474    0.0000
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              GTR+I+G4
+lnL:                -86372.8898
+Frequencies:        0.2937 0.2161 0.2604 0.2298
+Subst. Rates:       1.5473 1.9635 1.3265 1.1775 1.8177 1.0000 
+Inv. sites prop:    0.0216
+Gamma shape:        2.0831
+Score:              173351.7796
+Weight:             0.6457
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              1.9323
+Alpha-P.Inv:        2.0817
+P.Inv-Alpha:        0.0216
+Frequencies:        0.2945 0.2153 0.2614 0.2288 
+
+Commands:
+  > phyml  -i sprysec2/SPRYSEC_codingseqs.nexus.reduced -m 012345 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s sprysec2/SPRYSEC_codingseqs.nexus.reduced -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa sprysec2/SPRYSEC_codingseqs.nexus.reduced --model GTR+I+G4
+  > paup -s sprysec2/SPRYSEC_codingseqs.nexus.reduced
+  > iqtree -s sprysec2/SPRYSEC_codingseqs.nexus.reduced -m GTR+I+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+I+G4          10    -86372.8898    173421.7796         0.0000    0.6457
+       2  TVM+I+G4           9    -86374.4899    173422.9799         1.2003    0.3543
+       3  TIM2+I+G4          8    -86385.7373    173442.4746        20.6949    0.0000
+       4  TPM2uf+I+G4        7    -86386.7438    173442.4877        20.7080    0.0000
+       5  GTR+G4             9    -86394.0502    173462.1004        40.3208    0.0000
+       6  TVM+G4             8    -86396.2884    173463.5768        41.7972    0.0000
+       7  TIM2+G4            7    -86405.8871    173480.7741        58.9945    0.0000
+       8  TPM2uf+G4          6    -86408.1301    173482.2603        60.4806    0.0000
+       9  TIM3+I+G4          8    -86409.4048    173489.8097        68.0300    0.0000
+      10  TPM3uf+I+G4        7    -86411.4135    173491.8271        70.0474    0.0000
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              GTR+I+G4
+lnL:                -86372.8898
+Frequencies:        0.2937 0.2161 0.2604 0.2298
+Subst. Rates:       1.5473 1.9635 1.3265 1.1775 1.8177 1.0000 
+Inv. sites prop:    0.0216
+Gamma shape:        2.0831
+Score:              173421.7796
+Weight:             0.6457
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              1.9322
+Alpha-P.Inv:        2.0817
+P.Inv-Alpha:        0.0216
+Frequencies:        0.2945 0.2153 0.2614 0.2288 
+
+Commands:
+  > phyml  -i sprysec2/SPRYSEC_codingseqs.nexus.reduced -m 012345 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s sprysec2/SPRYSEC_codingseqs.nexus.reduced -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa sprysec2/SPRYSEC_codingseqs.nexus.reduced --model GTR+I+G4
+  > paup -s sprysec2/SPRYSEC_codingseqs.nexus.reduced
+  > iqtree -s sprysec2/SPRYSEC_codingseqs.nexus.reduced -m GTR+I+G4
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC            TVM+I+G4   175156.9769        0.9038
+       AIC            GTR+I+G4   173351.7796        0.6457
+      AICc            GTR+I+G4   173421.7796        0.6457
