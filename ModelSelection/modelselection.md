@@ -6,7 +6,7 @@ Darriba, D., Posada, D., Kozlov, A. M., Stamatakis, A., Morel, B., & Flouri, T. 
 
 ## Gr-1106
 ```
-$ modeltest-ng -i 1106_codingseqs.nexus.reduced
+$ modeltest-ng -i 1106_codingseqs.phylip.reduced
 ```
 output summary:
 ```
@@ -20,4 +20,56 @@ Partition 1/1:
       AICc             TIM3+G4     5572.9087        0.4358
 
 ```
-The reccomended raxmlHPC-SSE3 command with the optimal model  was suggested as `raxmlHPC-SSE3 -s 1106_codingseqs.nexus.reduced -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED`
+The reccomended raxmlHPC-SSE3 model was suggested as `GTRGAMMAX`
+
+## Hg-GLAND5
+```
+$ modeltest-ng -i GLAND5_codingseqs.phylip.reduced
+```
+output summary:
+```
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC            SYM+I+G4    13501.9075        0.1779
+       AIC            SYM+I+G4    13216.6742        0.4372
+      AICc            SYM+I+G4    13230.6742        0.5539
+
+```
+The reccomended raxmlHPC-SSE3 model was suggested as `GTRGAMMAI`
+
+## SPRYSEC
+```
+$ modeltest-ng -i SPRYSEC_codingseqs.nexus.reduced
+```
+output summary:
+```
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC            TVM+I+G4   175156.9769        0.9038
+       AIC            GTR+I+G4   173351.7796        0.6457
+      AICc            GTR+I+G4   173421.7796        0.6457
+```
+The reccomended raxmlHPC-SSe3 model was suggested as `GTRGAMMAX` or `GTRGAMMAIX`
+
+## CLE
+```
+$ modeltest-ng -i CLE_codingseqs.phylip.reduced
+```
+output summary:
+```
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC           TPM1uf+G4    19249.7019        0.6969
+       AIC            TVM+I+G4    18927.6971        0.2796
+      AICc            TVM+I+G4    18929.6971        0.2750
+```
+The reccomended raxmlHPC-SSE3 model was suggested as `GTRGAMMAX` or `GTRGAMMAIX`
